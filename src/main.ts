@@ -54,21 +54,21 @@ function applyPreset(preset: 'slow' | 'medium' | 'fast' | 'extreme') {
       break;
     case 'medium':
       // Fast
-      ballSpeedSlider.value = '50';
+      ballSpeedSlider.value = '150';
       paddleSpeedSlider.value = '800';
       ballAccelerationSlider.value = '2';
       powerUpFrequencySlider.value = '6';
       break;
     case 'fast':
       // Very fast
-      ballSpeedSlider.value = '75';
+      ballSpeedSlider.value = '250';
       paddleSpeedSlider.value = '1200';
       ballAccelerationSlider.value = '4';
       powerUpFrequencySlider.value = '4';
       break;
     case 'extreme':
       // Extreme speed
-      ballSpeedSlider.value = '125';
+      ballSpeedSlider.value = '450';
       paddleSpeedSlider.value = '1800';
       ballAccelerationSlider.value = '6';
       powerUpFrequencySlider.value = '2';
