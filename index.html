@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pong Plus - Ultimate 2-Player Game</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <div id="game-container">
+    <div id="score-display">
+      <div id="player1-score">0</div>
+      <div id="player2-score">0</div>
+    </div>
+    <div id="menu">
+      <h1>PONG PLUS</h1>
+
+      <div id="menu-screens">
+        <!-- Main screen (initial settings) -->
+        <div id="settings-screen" class="menu-screen active">
+          <div class="settings-container">
+            <h2>Ajustes de Velocidad</h2>
+
+            <div class="slider-container">
+              <label for="ball-speed">Velocidad de la Bola:</label>
+              <input type="range" id="ball-speed" min="10" max="150" value="50" step="5">
+              <span id="ball-speed-value" class="value-display">50</span>
+            </div>
+
+            <div class="slider-container">
+              <label for="paddle-speed">Velocidad de las Palas:</label>
+              <input type="range" id="paddle-speed" min="200" max="2000" value="800" step="100">
+              <span id="paddle-speed-value" class="value-display">800</span>
+            </div>
+
+            <div class="slider-container">
+              <label for="ball-acceleration">Aceleración de la Bola:</label>
+              <input type="range" id="ball-acceleration" min="0" max="10" value="2" step="0.5">
+              <span id="ball-acceleration-value" class="value-display">2</span>
+            </div>
+
+            <div class="slider-container">
+              <label for="powerup-frequency">Frecuencia de Power-ups:</label>
+              <input type="range" id="powerup-frequency" min="1" max="15" value="6" step="1">
+              <span id="powerup-frequency-value" class="value-display">6s</span>
+            </div>
+          </div>
+
+          <div class="menu-buttons">
+            <button id="presets-btn" class="menu-btn secondary">Presets</button>
+            <button id="start-game-btn" class="menu-btn primary">Empezar Juego</button>
+          </div>
+        </div>
+
+        <!-- Presets screen -->
+        <div id="presets-screen" class="menu-screen">
+          <div class="settings-container">
+            <h2>Presets de Velocidad</h2>
+            <div class="menu-buttons" style="flex-direction: column; align-items: center; gap: 10px;">
+              <button id="preset-slow" class="menu-btn">Normal</button>
+              <button id="preset-medium" class="menu-btn">Rápido</button>
+              <button id="preset-fast" class="menu-btn">Muy Rápido</button>
+              <button id="preset-extreme" class="menu-btn danger">Extremo</button>
+            </div>
+          </div>
+
+          <div class="menu-buttons">
+            <button id="back-to-settings-btn" class="menu-btn">Volver</button>
+          </div>
+        </div>
+
+        <!-- Instructions screen (shows during game pause) -->
+        <div id="instructions-screen" class="menu-screen">
+          <div id="instructions">
+            <h2>Controles:</h2>
+            <p>Player 1: W (up), S (down)</p>
+            <p>Player 2: Arrow Up, Arrow Down</p>
+            <h2>Mecánicas:</h2>
+            <p>- Power-ups appear randomly</p>
+            <p>- Paddles can change size</p>
+            <p>- Ball speed increases over time</p>
+          </div>
+
+          <button id="resume-btn" class="menu-btn primary">Continuar</button>
+        </div>
+      </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <div id="power-up-indicator">
+      <div id="player1-power-ups" class="power-up-slot"></div>
+      <div id="player2-power-ups" class="power-up-slot"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
